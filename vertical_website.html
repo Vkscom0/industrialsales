@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Enterprise Solution - Aapke Business Ka Bharosemand Sathi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0f172a',
+                            900: '#020617',
+                        },
+                        emeraldCustom: '#059669',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Business Logo & Name -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-white block leading-none">APEX <span class="text-emerald-400">ENTERPRISE</span></span>
+                        <span class="text-[10px] text-slate-400 tracking-wider uppercase font-medium">Digital Business Solutions</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#home" class="hover:text-emerald-400 transition-colors py-2">Home</a>
+                    <a href="#categories" class="hover:text-emerald-400 transition-colors py-2">Products & Services</a>
+                    <a href="#vision" class="hover:text-emerald-400 transition-colors py-2">Our Vision</a>
+                    <a href="#about" class="hover:text-emerald-400 transition-colors py-2">About Us</a>
+                    <a href="#contact" class="hover:text-emerald-400 transition-colors py-2">Contact Us</a>
+                </nav>
+
+                <!-- Navbar Action Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#contact" class="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-slate-950 font-semibold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/40 transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-headset mr-2"></i>Abhi Sampark Karein
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block py-2 text-slate-200 hover:text-emerald-400 font-medium border-b border-slate-800">Home</a>
+            <a href="#categories" class="block py-2 text-slate-200 hover:text-emerald-400 font-medium border-b border-slate-800">Products & Services</a>
+            <a href="#vision" class="block py-2 text-slate-200 hover:text-emerald-400 font-medium border-b border-slate-800">Our Vision</a>
+            <a href="#about" class="block py-2 text-slate-200 hover:text-emerald-400 font-medium border-b border-slate-800">About Us</a>
+            <a href="#contact" class="block py-2 text-slate-200 hover:text-emerald-400 font-medium border-b border-slate-800">Contact Us</a>
+            <a href="#contact" class="block w-full text-center bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3 rounded-xl transition">
+                Abhi Sampark Karein
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section (Home / Action) -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950">
+        <!-- Background Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-emerald-400 text-xs sm:text-sm font-semibold">
+                        <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        Aapke Business Ko Naye Unchaiyon Par Le Jaane Ke Liye
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Modern Solutions Se Apne <span class="gradient-text">Business Ko Grow Karein</span>
+                    </h1>
+
+                    <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Apex Enterprise ke sath pane high-quality products, smart digital tools, aur fast branding services. Hum aapke business sales aur customer reach ko 10x badhane me help karte hain.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#categories" class="w-full sm:w-auto text-center bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-basket-shopping mr-2"></i>Mera Order Karein
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto text-center bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-8 py-4 rounded-xl transition-all">
+                            <i class="fa-solid fa-handshake mr-2"></i>Humse Judaen
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-center">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">100%</p>
+                            <p class="text-xs text-slate-400 mt-1">Verified Quality</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">24/7</p>
+                            <p class="text-xs text-slate-400 mt-1">Dedicated Support</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">1000+</p>
+                            <p class="text-xs text-slate-400 mt-1">Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Banner Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 to-transparent opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
+                             alt="Business Strategy" 
+                             class="w-full h-64 sm:h-80 object-cover rounded-2xl mb-6 border border-slate-800"
+                             onerror="this.src='https://placehold.co/600x400/0f172a/059669?text=Apex+Business+Solutions'">
+                        
+                        <div class="relative z-10 flex items-center justify-between bg-slate-800/90 p-4 rounded-xl border border-slate-700">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                                    <i class="fa-solid fa-rocket text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Fast Growth Strategy</h4>
+                                    <p class="text-xs text-slate-400">Result-oriented business models</p>
+                                </div>
+                            </div>
+                            <span class="text-xs bg-emerald-500/20 text-emerald-400 font-semibold px-2.5 py-1 rounded-full">Top Rated</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Categories & Products Section -->
+    <section id="categories" class="py-20 bg-slate-900/60 border-t border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-emerald-400 font-semibold text-sm tracking-wider uppercase">Hamare Products Aur Services</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Sabse Behtareen Business Solutions</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Apne requirement ke hisab se sahi product ya service chuniye aur seedhe order karein.</p>
+                
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8" id="filter-buttons">
+                    <button onclick="filterProducts('all')" class="filter-btn active bg-emerald-500 text-slate-950 font-bold px-4 py-2 rounded-xl text-sm transition-all shadow-md">All Items</button>
+                    <button onclick="filterProducts('branding')" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium px-4 py-2 rounded-xl text-sm transition-all border border-slate-700">Branding</button>
+                    <button onclick="filterProducts('digital')" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium px-4 py-2 rounded-xl text-sm transition-all border border-slate-700">Digital Tools</button>
+                    <button onclick="filterProducts('consulting')" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium px-4 py-2 rounded-xl text-sm transition-all border border-slate-700">Consulting</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
+                
+                <!-- Product Card 1 -->
+                <div class="product-card branding bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a31216994c3?auto=format&fit=crop&w=600&q=80" alt="Brand Identity Kit" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f172a/10b981?text=Branding+Kit'">
+                        <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full">Popular</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-emerald-400 font-semibold mb-1 uppercase tracking-wider">Branding</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Complete Brand Identity Package</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">Logo Design, Visiting Cards, Social Media Banners aur Letterhead design shamil hai.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <div>
+                                <span class="text-xs text-slate-500 block">Starting from</span>
+                                <span class="text-xl font-extrabold text-white">₹4,999</span>
+                            </div>
+                            <button onclick="enquireProduct('Complete Brand Identity Package')" class="bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-emerald-400 font-semibold px-4 py-2 rounded-xl text-sm transition-all border border-slate-700 hover:border-emerald-500">
+                                Enquire Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card digital bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Business Website Setup" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f172a/06b6d4?text=Website+Setup'">
+                        <span class="absolute top-3 right-3 bg-cyan-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full">Best Value</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-cyan-400 font-semibold mb-1 uppercase tracking-wider">Digital Tools</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Business Landing Page Setup</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">Fast loading mobile-friendly business website, WhatsApp integration aur domain setup.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <div>
+                                <span class="text-xs text-slate-500 block">Starting from</span>
+                                <span class="text-xl font-extrabold text-white">₹7,999</span>
+                            </div>
+                            <button onclick="enquireProduct('Business Landing Page Setup')" class="bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-emerald-400 font-semibold px-4 py-2 rounded-xl text-sm transition-all border border-slate-700 hover:border-emerald-500">
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card consulting bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Business Growth Consultation" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f172a/10b981?text=Consulting'">
+                        <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full">1-on-1 Session</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-emerald-400 font-semibold mb-1 uppercase tracking-wider">Consulting</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Sales & Growth Advisory</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">Apne local business ko online expand karne ke liye customized growth roadmap.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <div>
+                                <span class="text-xs text-slate-500 block">Per Session</span>
+                                <span class="text-xl font-extrabold text-white">₹1,999</span>
+                            </div>
+                            <button onclick="enquireProduct('Sales Growth Advisory')" class="bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-emerald-400 font-semibold px-4 py-2 rounded-xl text-sm transition-all border border-slate-700 hover:border-emerald-500">
+                                Book Slot
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card digital bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80" alt="Social Media Marketing" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f172a/06b6d4?text=Social+Media'">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-cyan-400 font-semibold mb-1 uppercase tracking-wider">Digital Tools</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Social Media Ads Management</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">Facebook, Instagram aur Google Ads setup target audience tak pahunchne ke liye.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <div>
+                                <span class="text-xs text-slate-500 block">Monthly Package</span>
+                                <span class="text-xl font-extrabold text-white">₹8,500</span>
+                            </div>
+                            <button onclick="enquireProduct('Social Media Ads Package')" class="bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-emerald-400 font-semibold px-4 py-2 rounded-xl text-sm transition-all border border-slate-700 hover:border-emerald-500">
+                                Enquire Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card branding bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=600&q=80" alt="Product Packaging" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f172a/10b981?text=Packaging+Design'">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-emerald-400 font-semibold mb-1 uppercase tracking-wider">Branding</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Custom Packaging & Design</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">Retail products ke liye attractive box, label aur pouch design solutions.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <div>
+                                <span class="text-xs text-slate-500 block">Starting from</span>
+                                <span class="text-xl font-extrabold text-white">₹3,499</span>
+                            </div>
+                            <button onclick="enquireProduct('Custom Packaging Design')" class="bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-emerald-400 font-semibold px-4 py-2 rounded-xl text-sm transition-all border border-slate-700 hover:border-emerald-500">
+                                Enquire Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card consulting bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Business Automation" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f172a/06b6d4?text=Automation'">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-emerald-400 font-semibold mb-1 uppercase tracking-wider">Consulting</div>
+                        <h3 class="text-xl font-bold text-white mb-2">WhatsApp Business Automation</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">Auto-reply, chatbot, aur direct customer inquiry management setup.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <div>
+                                <span class="text-xs text-slate-500 block">One-time Fee</span>
+                                <span class="text-xl font-extrabold text-white">₹2,999</span>
+                            </div>
+                            <button onclick="enquireProduct('WhatsApp Automation')" class="bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-emerald-400 font-semibold px-4 py-2 rounded-xl text-sm transition-all border border-slate-700 hover:border-emerald-500">
+                                Setup Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Vision Section -->
+    <section id="vision" class="py-20 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 font-semibold text-sm tracking-wider uppercase">Hamari Soch Aur Maqsad</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Our Vision & Core Mission</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Humara aim har business ko simple, modern, aur affordable solutions dena hai.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-slate-900/80 border border-slate-800 p-8 rounded-2xl hover:border-emerald-500/40 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-6">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Unmatched Quality</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Hum har service aur product me top-class quality aur professionalism ko ensure karte hain bina kisi samjhote ke.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/80 border border-slate-800 p-8 rounded-2xl hover:border-cyan-500/40 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl mb-6">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Smart Innovation</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Naye zamane ke digital tools aur latest strategies ke sath aapke business ko hamesha competitors se aage rakhte hain.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/80 border border-slate-800 p-8 rounded-2xl hover:border-emerald-500/40 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-6">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Customer Satisfaction</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Aapki khushi aur business growth hi humari asli safalta hai. Dedicated support ke sath hum hamesha aapke sath hain.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-slate-900/40 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team Working" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/800x600/0f172a/10b981?text=Apex+Team'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-slate-800">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl font-bold">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-base">Trusted Business Partner</h4>
+                                    <p class="text-xs text-slate-400">Serving Businesses Across India Since 2019</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-emerald-400 font-semibold text-sm tracking-wider uppercase">Hamare Bare Me Jaannein</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Apex Enterprise Ki Kahani</h2>
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                        Apex Enterprise ki shuruat ek chhote se vision ke sath hui thi — small aur medium business owners ko high-quality, professional, aur affordable branding aur digital growth tools provide karna.
+                    </p>
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                        Aaj hum hazaron entrepreneurs aur shops ko unke brand identity aur online customer reach ko double karne me madad kar chuke hain. Humara focus seamless service aur long-term business relationship par rehta hai.
+                    </p>
+
+                    <!-- Core Value Bullet Points -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+                            <span class="text-slate-300 text-sm font-medium">Transparent Pricing</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+                            <span class="text-slate-300 text-sm font-medium">Fast Turnaround Time</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+                            <span class="text-slate-300 text-sm font-medium">Dedicated Manager</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+                            <span class="text-slate-300 text-sm font-medium">Free Initial Guidance</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-20 bg-slate-950 relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 font-semibold text-sm tracking-wider uppercase">Humse Baat Karein</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Apne Business Growth Ki Shuruat Karein</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Koi query hai ya order dena chahte hain? Niche diye gaye form ko bharein ya direct contact karein.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Direct Contact Information -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6">
+                        <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-800 pb-3">Contact Info</h3>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-medium">Phone Number</p>
+                                <a href="tel:+919876543210" class="text-white font-semibold hover:text-emerald-400 transition-colors">+91 98765 43210</a>
+                                <p class="text-xs text-slate-400">Mon - Sat (9:00 AM - 7:00 PM)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-medium">Email Address</p>
+                                <a href="mailto:info@apexenterprise.com" class="text-white font-semibold hover:text-emerald-400 transition-colors">info@apexenterprise.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-medium">Office Address</p>
+                                <p class="text-slate-300 text-sm">Suite 402, Business Hub, MG Road, Connaught Place, New Delhi - 110001</p>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="pt-4 border-t border-slate-800">
+                            <p class="text-xs text-slate-400 font-medium mb-3">Humse Social Media Par Judain:</p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 flex items-center justify-center transition-all"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+                                <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 flex items-center justify-center transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
+                                <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 flex items-center justify-center transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                                <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 flex items-center justify-center transition-all"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Interactive Contact Form -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-5 shadow-xl">
+                        <h3 class="text-xl font-bold text-white mb-2">Message Bhejein</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="name" class="block text-xs font-medium text-slate-300 mb-1.5">Aapka Naam *</label>
+                                <input type="text" id="name" required placeholder="Rajesh Kumar" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500 transition-colors text-sm">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-xs font-medium text-slate-300 mb-1.5">Phone / WhatsApp Number *</label>
+                                <input type="tel" id="phone" required placeholder="+91 9876543210" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500 transition-colors text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-xs font-medium text-slate-300 mb-1.5">Email Address</label>
+                            <input type="email" id="email" placeholder="rajesh@example.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500 transition-colors text-sm">
+                        </div>
+
+                        <div>
+                            <label for="service" class="block text-xs font-medium text-slate-300 mb-1.5">Kaunsi Service Me Interest Hai?</label>
+                            <select id="service" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors text-sm">
+                                <option value="Branding Kit">Branding Package</option>
+                                <option value="Business Website">Business Landing Page Setup</option>
+                                <option value="Consulting">Sales & Growth Advisory</option>
+                                <option value="Social Media Ads">Social Media Marketing</option>
+                                <option value="Other">Kuch Aur Requirement</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs font-medium text-slate-300 mb-1.5">Aapka Message ya Requirement *</label>
+                            <textarea id="message" rows="4" required placeholder="Apne business ke bare me aur requirement detail likhein..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500 transition-colors text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-slate-950 font-bold py-3.5 rounded-xl transition-all shadow-md shadow-emerald-500/20">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Message Submit Karein
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950 font-black text-xs">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <span class="text-sm font-bold text-white tracking-wider">APEX ENTERPRISE</span>
+            </div>
+            <p class="text-xs text-slate-500 text-center sm:text-left">
+                &copy; 2026 Apex Enterprise Solutions. All rights reserved.
+            </p>
+            <div class="flex gap-4 text-xs text-slate-400">
+                <a href="#home" class="hover:text-emerald-400 transition-colors">Privacy Policy</a>
+                <a href="#home" class="hover:text-emerald-400 transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Modal Feedback Box -->
+    <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 text-center space-y-4 shadow-2xl transform transition-all">
+            <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-3xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Shukriya!</h3>
+            <p id="modal-message" class="text-slate-300 text-sm leading-relaxed">
+                Aapka message hume mil gaya hai. Hamari team aapse 24 ghante ke andar contact karegi.
+            </p>
+            <button onclick="closeModal()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-2.5 rounded-xl transition">
+                Theek Hai
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu on click link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Category Filter Logic
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button state
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-emerald-500', 'text-slate-950', 'font-bold', 'shadow-md');
+                btn.classList.add('bg-slate-800', 'text-slate-300', 'font-medium');
+            });
+
+            event.currentTarget.classList.remove('bg-slate-800', 'text-slate-300', 'font-medium');
+            event.currentTarget.classList.add('bg-emerald-500', 'text-slate-950', 'font-bold', 'shadow-md');
+
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Quick Enquire Handler
+        function enquireProduct(productName) {
+            const serviceSelect = document.getElementById('service');
+            const messageInput = document.getElementById('message');
+            
+            // Auto fill form fields
+            if (serviceSelect && messageInput) {
+                messageInput.value = `Namaste! Mujhe "${productName}" ke bare me aur jankari chahiye.`;
+            }
+            
+            // Scroll to contact form
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const modalBackdrop = document.getElementById('modal-backdrop');
+        const modalMessage = document.getElementById('modal-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            
+            modalMessage.innerHTML = `Dhanyawad <strong>${name}</strong>! Aapki enquiry receive ho gayi hai. Hamari team jaldi hi aapse contact karegi.`;
+            modalBackdrop.classList.remove('hidden');
+            
+            contactForm.reset();
+        });
+
+        function closeModal() {
+            modalBackdrop.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
